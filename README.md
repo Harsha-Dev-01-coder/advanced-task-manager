@@ -5,7 +5,7 @@ TypeScript, Redux Toolkit, and Tailwind CSS.
 
 ## Live Demo
 
-[Open the live application](YOUR_DEPLOYED_URL)
+[Open the live application] - https://harsha-dev-01-coder.github.io/advanced-task-manager/
 
 ## Overview
 
