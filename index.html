@@ -2,10 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>advanced-task-manager</title>
+    <title>Advanced Task Manager</title>
+
+    <script>
+      (function () {
+        const redirect = sessionStorage.getItem("spa-redirect");
+
+        if (redirect) {
+          sessionStorage.removeItem("spa-redirect");
+
+          const base = import.meta.env.BASE_URL;
+          const target = base.replace(/\/$/, "") + redirect;
+
+          window.history.replaceState(null, "", target);
+        }
+      })();
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

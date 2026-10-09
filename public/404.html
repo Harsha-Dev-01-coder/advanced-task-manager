@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Task Manager</title>
+
+    <script>
+      const segmentCount = 1;
+      const locationParts = window.location.pathname.split("/");
+
+      const basePath =
+        "/" + locationParts.slice(1, segmentCount + 1).join("/");
+
+      const redirectPath =
+        window.location.pathname
+          .slice(basePath.length) || "/";
+
+      sessionStorage.setItem(
+        "spa-redirect",
+        redirectPath + window.location.search + window.location.hash
+      );
+
+      window.location.replace(basePath + "/");
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to Advanced Task Manager...</p>
+  </body>
+</html>
