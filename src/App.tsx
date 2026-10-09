@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+
 import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import Tasks from "./pages/Tasks";
@@ -9,14 +10,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<DashboardLayout />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/tasks/new" element={<NewTask />} />
-        <Route path="/tasks/:id" element={<TaskDetails />} />
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/tasks/new" element={<NewTask />} />
+          <Route path="/tasks/:id" element={<TaskDetails />} />
+        </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;

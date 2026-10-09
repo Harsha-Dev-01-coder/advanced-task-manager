@@ -1,152 +1,60 @@
 # Advanced Task Manager
 
-A modern task management application built with React, TypeScript, Redux Toolkit, React Router, and Tailwind CSS.
+A responsive task-management application built with React,
+TypeScript, Redux Toolkit, and Tailwind CSS.
 
-The application is designed with a scalable feature-based architecture, reusable components, centralized state management, and validated forms to demonstrate practical frontend engineering skills.
+## Live Demo
 
----
+[Open the live application](YOUR_DEPLOYED_URL)
 
-## 🚀 Tech Stack
+## Overview
 
-- **React 19** — Component-based UI development
-- **TypeScript** — Static typing and type safety
-- **Vite** — Development server and build tooling
-- **Tailwind CSS** — Utility-first styling
-- **Redux Toolkit** — Centralized state management
-- **React Redux** — Connecting React components to Redux
-- **React Router** — Client-side navigation and routing
-- **React Hook Form** — Form handling and validation
-- **ESLint** — Code quality and linting
-- **Git & GitHub** — Version control and collaboration
+Advanced Task Manager helps users organize tasks, track progress,
+manage priorities, and monitor upcoming deadlines.
 
----
+## Features
 
-## ✨ Features
+- Create, view, edit, and delete tasks
+- Organize tasks by status and priority
+- Search tasks by title and description
+- Filter tasks by status and priority
+- Sort tasks using multiple options
+- View dashboard statistics
+- Track upcoming and overdue tasks
+- Persist tasks using browser localStorage
+- Responsive dashboard and task-management interface
 
-### 📋 Task Management
+## Tech Stack
 
-- Create new tasks.
-- View all tasks in a structured list.
-- Edit existing tasks.
-- Delete tasks with a confirmation dialog.
-- Update task statuses.
-- Display an informative empty state when no tasks exist.
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Redux Toolkit
+- React Redux
+- React Hook Form
+- React Router
+- localStorage
 
-### 📝 Task Details
-
-Each task contains:
-
-- **Title** — The name of the task.
-- **Description** — Additional information about the task.
-- **Priority** — Low, Medium, or High.
-- **Status** — Todo, In Progress, or Completed.
-- **Due Date** — An optional deadline.
-
-### ✅ Form Validation
-
-Task forms include validation to prevent invalid submissions.
-
-**Title**
-- Required field.
-- Minimum length: 3 characters.
-- Maximum length: 100 characters.
-
-**Description**
-- Required field.
-- Minimum length: 10 characters.
-
-Validation errors are displayed alongside the corresponding form fields.
-
-### 🎯 State Management
-
-Redux Toolkit manages task data through a centralized store.
-
-Implemented actions include:
-
-- `addTask` — Adds a new task.
-- `updateTask` — Updates an existing task.
-- `deleteTask` — Removes a task.
-- `updateTaskStatus` — Changes a task's status.
-
-Typed Redux hooks provide type-safe access to application state and dispatch.
-
-### 🧩 Reusable Components
-
-The application uses reusable components to keep the code organized and maintainable.
-
-- `TaskForm` — Handles task creation and editing.
-- `TaskCard` — Displays individual task information.
-- `TaskList` — Renders the collection of tasks.
-- `DashboardLayout` — Provides the shared application layout.
-
-### 🧭 Navigation
-
-React Router manages navigation between application pages.
-
-| Route | Description |
-|---|---|
-| `/dashboard` | Dashboard |
-| `/tasks` | View all tasks |
-| `/tasks/new` | Create a new task |
-| `/tasks/:id` | View or edit a task |
-
----
-
-## 📂 Project Structure
-
-```text
-src/
-├── assets/
-├── components/
-├── features/
-│   └── tasks/
-│       ├── components/
-│       │   ├── TaskCard.tsx
-│       │   ├── TaskForm.tsx
-│       │   └── TaskList.tsx
-│       └── taskSlice.ts
-├── hooks/
-│   └── redux.ts
-├── layouts/
-│   └── DashboardLayout.tsx
-├── pages/
-│   ├── Dashboard.tsx
-│   ├── NewTask.tsx
-│   ├── TaskDetails.tsx
-│   └── Tasks.tsx
-├── store/
-│   └── store.ts
-├── types/
-│   └── task.ts
-├── utils/
-├── App.tsx
-├── App.css
-├── index.css
-└── main.tsx
-```
-
----
-
-## ⚙️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
 - Node.js
 - npm
-- Git
 
 ### Installation
 
 Clone the repository:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Harsha-Dev-01-coder/advanced-task-manager
 ```
 
-Navigate to the project directory:
+Navigate into the project:
 
 ```bash
-cd advanced-task-manager
+cd task-manager
 ```
 
 Install dependencies:
@@ -161,69 +69,48 @@ Start the development server:
 npm run dev
 ```
 
-Open the local URL displayed in your terminal to access the application.
-
----
-
-## 🏗️ Production Build
-
-Run the TypeScript checks and generate an optimized production build:
+## Production Build
 
 ```bash
 npm run build
 ```
 
-To preview the production build locally:
+## Project Structure
 
-```bash
-npm run preview
+```text
+src/
+├── components/
+├── features/
+│   └── tasks/
+│       ├── components/
+│       ├── utils/
+│       └── taskSlice.ts
+├── hooks/
+├── layouts/
+├── pages/
+├── store/
+├── types/
+└── utils/
 ```
 
----
+Adjust this structure to match your actual repository.
 
-## ⚠️ Current Limitations
+## Data Persistence
 
-- Task data is stored in Redux memory.
-- Refreshing the browser resets the task list.
-- Tasks are not persisted in localStorage or a database.
-- Backend integration has not yet been implemented.
-- Authentication and user-specific task management are not yet implemented.
+Tasks are stored in browser localStorage and restored when
+the application initializes.
 
-These limitations can be addressed through future enhancements.
+Data is stored locally in the browser and is not synchronized
+across devices.
 
----
+## Future Improvements
 
-## 🔮 Future Improvements
+- Backend API integration
+- User authentication
+- Cloud synchronization
+- Collaborative task management
+- Notifications and reminders
 
-- Persist tasks using localStorage or a backend database.
-- Add task search, filtering, and sorting.
-- Build a dashboard with task statistics.
-- Add pagination for large task lists.
-- Improve accessibility and keyboard navigation.
-- Add responsive layouts for mobile, tablet, and desktop.
-- Integrate a backend API.
-- Implement authentication and user accounts.
-- Add automated tests.
+## Author
 
----
-
-## 🎯 Project Objectives
-
-This project demonstrates practical experience with:
-
-- React component architecture
-- TypeScript and type-safe development
-- Redux Toolkit and centralized state management
-- CRUD operations
-- Form handling and validation
-- Client-side routing
-- Reusable components
-- Feature-based folder organization
-- Git and GitHub workflows
-- Production build verification
-
----
-
-## 👨‍💻 Author
-
-Frontend Developer focused on building practical, maintainable, and scalable web applications.
+Harsha
