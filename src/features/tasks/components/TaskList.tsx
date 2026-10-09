@@ -1,19 +1,18 @@
-import { useAppSelector } from "../../../hooks/redux";
+import type { Task } from "../../../types/task";
 import TaskCard from "./TaskCard";
 
 interface TaskListProps {
+  tasks: Task[];
   onDelete: (id: string) => void;
 }
 
-function TaskList({ onDelete }: TaskListProps) {
-  const tasks = useAppSelector((state) => state.tasks.tasks);
-
+function TaskList({ tasks, onDelete }: TaskListProps) {
   if (tasks.length === 0) {
     return (
-      <div className="rounded-xl border border-dashed p-10 text-center">
-        <h2 className="text-xl font-semibold">No tasks yet</h2>
+      <div className="rounded-lg border border-gray-200 p-8 text-center">
+        <h2 className="text-xl font-semibold">No tasks found</h2>
         <p className="mt-2 text-gray-500">
-          Create your first task to get started.
+          Try changing your search or create a new task.
         </p>
       </div>
     );
