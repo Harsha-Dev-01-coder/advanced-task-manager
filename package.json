@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "build:github-pages": "tsc -b && vite build --mode github-pages",
+  "lint": "eslint .",
+  "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.13.0",
